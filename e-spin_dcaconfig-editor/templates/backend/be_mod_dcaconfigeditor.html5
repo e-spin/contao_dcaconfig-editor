@@ -1,0 +1,30 @@
+
+<div id="tl_buttons">
+    <a href="<?php echo $this->referer['href']; ?>" class="header_back" title="<?php echo $this->referer['title']; ?>" accesskey="b" onclick="Backend.getScrollOffset()"><?php echo $this->referer['link']; ?></a>
+</div>
+
+<h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+<form action="<?php echo $this->action; ?>" id="tl_files" class="tl_form" method="post">
+    <div class="tl_formbody_edit">
+        <input type="hidden" name="FORM_SUBMIT" value="tl_files">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+
+        <div class="tl_tbox">
+            <h3><label for="ctrl_source"><?php echo $this->label; ?></label></h3>
+            <textarea name="source" id="ctrl_source" class="tl_textarea monospace" rows="12" cols="80" style="height:400px" onfocus="Backend.getScrollOffset()"><?php echo $this->content; ?></textarea>
+            <?php if ($this->description): ?>
+            <p class="tl_help tl_tip"><?php echo $this->description; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="tl_formbody_submit">
+        <div class="tl_submit_container">
+            <input type="submit" name="save" id="save" class="tl_submit" accesskey="s" value="<?php echo $this->save; ?>">
+            <input type="submit" name="saveNclose" id="saveNclose" class="tl_submit" accesskey="c" value="<?php echo $this->saveNclose; ?>">
+        </div>
+    </div>
+</form>
+
+<?php echo $this->codeEditor; ?>
