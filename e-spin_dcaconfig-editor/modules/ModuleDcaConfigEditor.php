@@ -65,6 +65,11 @@ class ModuleDcaConfigEditor extends \BackendModule
         // Prepare the code editor
         if ($GLOBALS['TL_CONFIG']['useCE'])
         {
+        		if (version_compare(VERSION, '3.4', '>='))
+        		{
+								$selector = 'ctrl_source';
+            		$type = $objFile->extension;
+        		}        	
             $this->ceFields = array(array
             (
                 'id' => 'ctrl_source',
